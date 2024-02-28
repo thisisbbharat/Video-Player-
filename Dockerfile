@@ -1,14 +1,5 @@
-# Use the official Python image as a base image
-FROM python:3.9-slim
+FROM nginx:alpine
 
-# Set the working directory in the container
-WORKDIR /app
+COPY . /usr/share/nginx/html/
 
-# Copy the current directory contents into the container at /app
-COPY . /app
 
-# Install any needed dependencies
-RUN pip install python-vlc
-
-# Run app.py when the container launches
-CMD ["python", "app.py"]
